@@ -1,3 +1,193 @@
 .hidden {
     display: none;
 }
+body {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+img {
+    z-index: -99;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    object-fit: cover;
+    display: block;
+}
+
+* {
+    color: azure;
+}
+
+#main {
+    display: inline-block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    cursor: default;
+    /* text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black; */
+}
+
+#greeting {
+    margin: 20px;
+    font-size: 60px;
+}
+
+#login-form {
+    margin: 20px;
+}
+
+/* From uiverse.io by @alexruix */
+/* From uiverse.io by @alexruix */
+.input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: azure;
+    padding: 0.2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: azure;
+    transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.input:focus,
+.input:hover {
+    outline: none;
+    padding: 0.2rem 1rem;
+    border-radius: 1rem;
+    border-color: azure;
+}
+
+.input::placeholder {
+    color: azure;
+}
+
+.input:focus::placeholder {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#quote {
+    cursor: default;
+    display: inline-block;
+    position: absolute;
+    bottom: 25px;
+    transform: translateX(-50%);
+}
+
+#timeview {
+    color: azure;
+}
+
+#clock {
+    letter-spacing: 0.05em;
+    font-size: 80px;
+    padding: 5px 0;
+}
+
+#date {
+    letter-spacing: 0.1em;
+    font-size: 24px;
+}
+
+#weather {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+/* From uiverse.io by @G4b413l */
+#loading {
+    --uib-size: 80px;
+    --uib-speed: 1.55s;
+    --uib-color: azure;
+    --uib-line-weight: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--uib-line-weight);
+    width: var(--uib-size);
+    border-radius: calc(var(--uib-line-weight) / 2);
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+#loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--uib-color);
+    opacity: 0.1;
+}
+
+#loading::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: calc(var(--uib-line-weight) / 2);
+    animation: wobble var(--uib-speed) ease-in-out infinite;
+    transform: translateX(-90%);
+    background-color: var(--uib-color);
+}
+
+@keyframes wobble {
+    0%,
+    100% {
+        transform: translateX(-90%);
+    }
+
+    50% {
+        transform: translateX(90%);
+    }
+}
+
+#todo {
+    position: absolute;
+    opacity: 0.8;
+    right: 25px;
+    top: 25px;
+    width: 250px;
+    height: auto;
+    border-radius: 25px;
+    padding: 10px;
+    background: rgb(40, 40, 40);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+        rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#todo-list li {
+    list-style-type: none;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+li div {
+    text-align: left;
+    word-break: break-all;
+    vertical-align: middle;
+}
+li div:hover {
+    cursor: pointer;
+    color: grey;
+    transition: 0.5s;
+}
+li button {
+    display: block;
+    background: none;
+    border: none;
+    border-radius: 5px;
+}
+
+li button:hover {
+    background: rgba(170, 170, 170, 0.3);
+    transition: 0.5s;
+}
